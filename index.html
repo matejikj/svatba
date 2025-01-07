@@ -3,10 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje statická stránka</title>
+    <title>Naše Svatba</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            scroll-behavior: smooth;
+        }
+        .parallax {
+            height: 400px;
+            background-image: url('https://via.placeholder.com/1920x1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #6a67ce;
+            text-align: center;
+        }
+        footer {
+            background: #6a67ce;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .side-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            z-index: 1000;
+        }
+        .side-nav a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: #6a67ce;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            line-height: 30px;
+        }
+        .side-nav a:hover {
+            background: #4a47a3;
+        }
+        .menu-icon {
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+            font-size: 30px;
+            background: #6a67ce;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .side-nav-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .side-nav-mobile a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        @media (min-width: 768px) {
+            .menu-icon {
+                display: none;
+            }
+            .side-nav {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Vítejte na mé stránce!</h1>
-    <p>Toto je moje první stránka na GitHub Pages.</p>
+    <!-- Mobile Menu Icon -->
+    <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
+
+    <!-- Side Navigation -->
+    <div class="side-nav d-none d-md-block">
+        <a href="#kdy-kde">1</a>
+        <a href="#program">2</a>
+        <a href="#outfit">3</a>
+        <a href="#ubytovani">4</a>
+        <a href="#zabava">5</a>
+        <a href="#kontakt">6</a>
+    </div>
+
+    <!-- Mobile Side Navigation -->
+    <div class="side-nav-mobile d-md-none" id="mobileMenu">
+        <a href="#kdy-kde" onclick="toggleMobileMenu()">Kdy a Kde</a>
+        <a href="#program" onclick="toggleMobileMenu()">Program</a>
+        <a href="#outfit" onclick="toggleMobileMenu()">Outfit</a>
+        <a href="#ubytovani" onclick="toggleMobileMenu()">Ubytování</a>
+        <a href="#zabava" onclick="toggleMobileMenu()">Zábava</a>
+        <a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1 class="display-4">Naše Svatba</h1>
+        <p class="lead">Srdečně vás zveme na náš velký den!</p>
+    </header>
+
+    <!-- Parallax Section -->
+    <div class="parallax"></div>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <section id="kdy-kde" class="mb-5">
+            <h2 class="section-title">Kdy a Kde</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Datum:</strong> 15. června 2024</p>
+                    <p><strong>Čas:</strong> 14:00</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Místo:</strong> Zámecká zahrada, Praha</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax Section -->
+        <div class="parallax"></div>
+
+        <section id="program" class="mb-5">
+            <h2 class="section-title">Program</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">14:00 - Obřad</li>
+                <li class="list-group-item">15:30 - Přípitek a focení</li>
+                <li class="list-group-item">17:00 - Slavnostní večeře</li>
+                <li class="list-group-item">19:00 - Hudba a tanec</li>
+            </ul>
+        </section>
+
+        <!-- Parallax Section -->
+        <div class="parallax"></div>
+
+        <section id="outfit" class="mb-5">
+            <h2 class="section-title">Outfit</h2>
+            <p>Dress code: Formální oblečení. Pánové prosíme oblek, dámy společenské šaty.</p>
+        </section>
+
+        <!-- Parallax Section -->
+        <div class="parallax"></div>
+
+        <section id="ubytovani" class="mb-5">
+            <h2 class="section-title">Ubytování</h2>
+            <p>Pro hosty zdaleka je k dispozici ubytování v blízkém hotelu Zámecký Dvůr. Rezervace na <a href="mailto:ubytovani@email.com">ubytovani@email.com</a>.</p>
+        </section>
+
+        <!-- Parallax Section -->
+        <div class="parallax"></div>
+
+        <section id="zabava" class="mb-5">
+            <h2 class="section-title">Zábava</h2>
+            <p>Po večeři se můžete těšit na živou hudbu, taneční vystoupení a fotokoutek.</p>
+        </section>
+
+        <!-- Parallax Section -->
+        <div class="parallax"></div>
+
+        <section id="kontakt" class="mb-5">
+            <h2 class="section-title">Kontakt</h2>
+            <p>Pro jakékoliv dotazy nás můžete kontaktovat:</p>
+            <p>Email: <a href="mailto:svatba@email.com">svatba@email.com</a></p>
+            <p>Telefon: +420 123 456 789</p>
+        </section>
+    </main>
+
+    <!-- Parallax Section -->
+    <div class="parallax"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Naše Svatba. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            if (menu.style.display === 'flex') {
+                menu.style.flexDirection = 'column';
+                menu.style.justifyContent = 'center';
+                menu.style.alignItems = 'center';
+            }
+        }
+    </script>
 </body>
 </html>
