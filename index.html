@@ -10,7 +10,25 @@
         /* Custom Styles */
         body {
             scroll-behavior: smooth;
+            background-color: #fff;
         }
+        header {
+            background-color: #fff;
+            text-align: center;
+            padding: 0px 0;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .webCard {
+            display: none;
+            /* max-width: 100%;
+            height: auto; */
+        }
+
         .parallax {
             height: 400px;
             background-image: url('https://via.placeholder.com/1920x1080');
@@ -104,6 +122,16 @@
             transform: translateY(-3px);
         }
         @media (min-width: 768px) {
+            .mobileCard {
+                display: none;
+            }
+
+            .webCard {
+                display: inline;
+                height: 100vh;
+                width: auto;
+            }
+
             .menu-icon {
                 display: none;
             }
@@ -127,20 +155,22 @@
         <a href="#kontakt">Kontakt</a>
     </div>
 
-    <!-- Mobile Side Navigation -->
-    <div class="side-nav-mobile d-md-none" id="mobileMenu">
-        <a href="#kdy-kde" onclick="toggleMobileMenu()">Kdy a Kde</a>
-        <a href="#program" onclick="toggleMobileMenu()">Program</a>
-        <a href="#outfit" onclick="toggleMobileMenu()">Outfit</a>
-        <a href="#ubytovani" onclick="toggleMobileMenu()">Ubytování</a>
-        <a href="#zabava" onclick="toggleMobileMenu()">Zábava</a>
-        <a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a>
-        <a href="javascript:void(0);" onclick="toggleMobileMenu()" style="color: red;">Skryt Menu</a>
-    </div>
+        <!-- Mobile Side Navigation -->
+        <div class="side-nav-mobile d-md-none" id="mobileMenu">
+            <a href="#kdy-kde" onclick="toggleMobileMenu()">Kdy a Kde</a>
+            <a href="#program" onclick="toggleMobileMenu()">Program</a>
+            <a href="#outfit" onclick="toggleMobileMenu()">Outfit</a>
+            <a href="#ubytovani" onclick="toggleMobileMenu()">Ubytování</a>
+            <a href="#zabava" onclick="toggleMobileMenu()">Zábava</a>
+            <a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a>
+            <a href="javascript:void(0);" onclick="toggleMobileMenu()" style="color: red;">Skryt Menu</a>
+        </div>    
 
     <!-- Header -->
-    <header class="bg-primary text-white text-center py-5">
-        <h1 class="display-4"></h1>
+    <header>
+        <img class="webCard" src="card.png" alt="Svatební obrázek">
+        <img class="mobileCard" src="mobile.png" alt="Svatební obrázek">
+        <h1 class="display-4">Naše Svatba</h1>
         <p class="lead">Srdečně vás zveme na náš velký den!</p>
     </header>
 
