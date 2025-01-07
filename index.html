@@ -42,18 +42,19 @@
         .side-nav a {
             display: block;
             margin: 10px 0;
-            padding: 10px;
-            background: #6a67ce;
-            color: #fff;
+            padding: 10px 20px;
+            background: #749a86;
+            color: #eceae3;
             text-align: center;
             text-decoration: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            line-height: 30px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
         .side-nav a:hover {
-            background: #4a47a3;
+            background: #FFA500;
+            transform: translateY(-3px);
         }
         .menu-icon {
             display: block;
@@ -66,6 +67,11 @@
             color: #fff;
             padding: 10px;
             border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
         }
         .side-nav-mobile {
@@ -82,10 +88,20 @@
             align-items: center;
         }
         .side-nav-mobile a {
-            color: #fff;
+            color: #eceae3;
             font-size: 1.5rem;
             margin: 10px 0;
             text-decoration: none;
+            background: #749a86;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .side-nav-mobile a:hover {
+            background: #FFA500;
+            transform: translateY(-3px);
         }
         @media (min-width: 768px) {
             .menu-icon {
@@ -103,12 +119,12 @@
 
     <!-- Side Navigation -->
     <div class="side-nav d-none d-md-block">
-        <a href="#kdy-kde">1</a>
-        <a href="#program">2</a>
-        <a href="#outfit">3</a>
-        <a href="#ubytovani">4</a>
-        <a href="#zabava">5</a>
-        <a href="#kontakt">6</a>
+        <a href="#kdy-kde">Kdy a Kde</a>
+        <a href="#program">Program</a>
+        <a href="#outfit">Outfit</a>
+        <a href="#ubytovani">Ubytování</a>
+        <a href="#zabava">Zábava</a>
+        <a href="#kontakt">Kontakt</a>
     </div>
 
     <!-- Mobile Side Navigation -->
@@ -119,11 +135,12 @@
         <a href="#ubytovani" onclick="toggleMobileMenu()">Ubytování</a>
         <a href="#zabava" onclick="toggleMobileMenu()">Zábava</a>
         <a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a>
+        <a href="javascript:void(0);" onclick="toggleMobileMenu()" style="color: red;">Skryt Menu</a>
     </div>
 
     <!-- Header -->
     <header class="bg-primary text-white text-center py-5">
-        <h1 class="display-4">Naše Svatba</h1>
+        <h1 class="display-4"></h1>
         <p class="lead">Srdečně vás zveme na náš velký den!</p>
     </header>
 
@@ -206,8 +223,10 @@
     <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
-            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
             if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
                 menu.style.flexDirection = 'column';
                 menu.style.justifyContent = 'center';
                 menu.style.alignItems = 'center';
