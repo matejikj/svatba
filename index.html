@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naše Svatba</title>
     <!-- Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
     <style>
         /* Custom Styles */
         body {
             scroll-behavior: smooth;
+            font-family: 'DM Serif Text', cursive;
             background-color: #fff;
         }
+
+
         header {
             background-color: #fff;
             text-align: center;
@@ -37,19 +46,22 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
         .section-title {
             font-size: 2rem;
             margin-bottom: 20px;
             text-transform: uppercase;
-            color: #6a67ce;
+            color: #749a86;
             text-align: center;
         }
+
         footer {
-            background: #6a67ce;
+            background: #749a86;
             color: #fff;
             padding: 20px 0;
             text-align: center;
         }
+
         .side-nav {
             position: fixed;
             top: 50%;
@@ -57,11 +69,12 @@
             left: 20px;
             z-index: 1000;
         }
+
         .side-nav a {
             display: block;
             margin: 10px 0;
             padding: 10px 20px;
-            background: #749a86;
+            background: #bd7f60;
             color: #eceae3;
             text-align: center;
             text-decoration: none;
@@ -70,10 +83,12 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
+
         .side-nav a:hover {
-            background: #FFA500;
+            background: #a34618;
             transform: translateY(-3px);
         }
+
         .menu-icon {
             display: block;
             position: fixed;
@@ -81,7 +96,7 @@
             right: 20px;
             z-index: 1100;
             font-size: 30px;
-            background: #6a67ce;
+            background: #749a86;
             color: #fff;
             padding: 10px;
             border-radius: 50%;
@@ -92,6 +107,7 @@
             justify-content: center;
             cursor: pointer;
         }
+
         .side-nav-mobile {
             display: none;
             position: fixed;
@@ -105,6 +121,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .side-nav-mobile a {
             color: #eceae3;
             font-size: 1.5rem;
@@ -117,13 +134,20 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
+
         .side-nav-mobile a:hover {
             background: #FFA500;
             transform: translateY(-3px);
         }
+
         @media (min-width: 768px) {
             .mobileCard {
                 display: none;
+            }
+
+            section {
+                padding: 100px;
+                overflow: hidden;
             }
 
             .webCard {
@@ -135,12 +159,19 @@
             .menu-icon {
                 display: none;
             }
+
             .side-nav {
                 display: block;
             }
         }
+
+        .mapa {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
+
 <body>
     <!-- Mobile Menu Icon -->
     <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
@@ -155,16 +186,16 @@
         <a href="#kontakt">Kontakt</a>
     </div>
 
-        <!-- Mobile Side Navigation -->
-        <div class="side-nav-mobile d-md-none" id="mobileMenu">
-            <a href="#kdy-kde" onclick="toggleMobileMenu()">Kdy a Kde</a>
-            <a href="#program" onclick="toggleMobileMenu()">Program</a>
-            <a href="#outfit" onclick="toggleMobileMenu()">Outfit</a>
-            <a href="#ubytovani" onclick="toggleMobileMenu()">Ubytování</a>
-            <a href="#zabava" onclick="toggleMobileMenu()">Zábava</a>
-            <a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a>
-            <a href="javascript:void(0);" onclick="toggleMobileMenu()" style="color: red;">Skryt Menu</a>
-        </div>    
+    <!-- Mobile Side Navigation -->
+    <div class="side-nav-mobile d-md-none" id="mobileMenu">
+        <a href="#kdy-kde" onclick="toggleMobileMenu()">Kdy a Kde</a>
+        <a href="#program" onclick="toggleMobileMenu()">Program</a>
+        <a href="#outfit" onclick="toggleMobileMenu()">Outfit</a>
+        <a href="#ubytovani" onclick="toggleMobileMenu()">Ubytování</a>
+        <a href="#zabava" onclick="toggleMobileMenu()">Zábava</a>
+        <a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a>
+        <a href="javascript:void(0);" onclick="toggleMobileMenu()" style="color: black;">Skrýt Menu</a>
+    </div>
 
     <!-- Header -->
     <header>
@@ -178,18 +209,38 @@
     <!-- <div class="parallax"></div> -->
 
     <!-- Main Content -->
-    <main class="container my-5">
+    <main class="container my-5 my-padding">
         <section id="kdy-kde" class="mb-5">
+            <!-- <h3>S láskou vám oznamujeme, že spojíme své životy v jeden.</h3> -->
             <h2 class="section-title">Kdy a Kde</h2>
             <div class="row">
+                <h3>Obřad:</h3>
+            </div>
+            <div class="row">
                 <div class="col-md-6">
-                    <p><strong>Datum:</strong> 15. června 2024</p>
+                    <p><strong>Datum:</strong> 12. července 2025</p>
                     <p><strong>Čas:</strong> 14:00</p>
                 </div>
                 <div class="col-md-6">
-                    <p><strong>Místo:</strong> Zámecká zahrada, Praha</p>
+                    <p><strong>Místo:</strong> Hradištěk u Velkých Bílovic</p>
                 </div>
             </div>
+            </br>
+            <div class="row">
+                <h3>Pokračovat budeme:</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Místo:</strong> Vinařství U Madla, Velké Bílovice</p>
+                </div>
+                <div class="col-md-6 mapa">
+                    <!-- <iframe style="border:none" src="https://en.frame.mapy.cz/s/dujujejoha" width="400" height="280"
+                        frameborder="0"></iframe> -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.101115397306!2d16.908010699999995!3d48.85628219999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712d673fc4e37f3%3A0xe8c4bfc555afcf56!2zU3RhbmlzbGF2IE3DoWRsIC0gVsOhxaEgdmluYcWZ!5e0!3m2!1sen!2scz!4v1736350879857!5m2!1sen!2scz" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </br>
+            <h4>Budeme rádi, když tento výjimečný den strávíte s námi!</h4>
         </section>
 
         <!-- Parallax Section -->
@@ -206,19 +257,20 @@
         </section>
 
         <!-- Parallax Section -->
-        <div class="parallax"></div>
+        <!-- <div class="parallax"></div>
 
         <section id="outfit" class="mb-5">
             <h2 class="section-title">Outfit</h2>
             <p>Dress code: Formální oblečení. Pánové prosíme oblek, dámy společenské šaty.</p>
-        </section>
+        </section> -->
 
         <!-- Parallax Section -->
-        <div class="parallax"></div>
+        <!-- <div class="parallax"></div> -->
 
         <section id="ubytovani" class="mb-5">
             <h2 class="section-title">Ubytování</h2>
-            <p>Pro hosty zdaleka je k dispozici ubytování v blízkém hotelu Zámecký Dvůr. Rezervace na <a href="mailto:ubytovani@email.com">ubytovani@email.com</a>.</p>
+            <p>Pro hosty zdaleka je k dispozici ubytování v blízkém hotelu Zámecký Dvůr. Rezervace na <a
+                    href="mailto:ubytovani@email.com">ubytovani@email.com</a>.</p>
         </section>
 
         <!-- Parallax Section -->
@@ -264,4 +316,5 @@
         }
     </script>
 </body>
+
 </html>
