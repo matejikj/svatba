@@ -65,7 +65,7 @@
 
         .parallax {
             position: relative;
-            height: 600px;
+            height: 400px;
             /* Výška sekce */
             overflow: hidden;
         }
@@ -75,9 +75,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
             /* Obrázek vyplní celou výšku sekce */
-            object-fit: scale-down;
+            object-fit: cover;
             /* Obrázek bude oříznut tak, aby pokryl celý kontejner */
             object-position: center;
             /* Střed obrázku bude zachován */
@@ -214,10 +214,27 @@
             }
 
             .parallax {
-                height: 400px;
-                /* Menší výška pro mobilní zařízení */
-            }
+            position: relative;
+            height: 600px;
+            /* Výška sekce */
+            overflow: hidden;
+        }
 
+        .parallax img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            /* Obrázek vyplní celou výšku sekce */
+            object-fit: scale-down;
+            /* Obrázek bude oříznut tak, aby pokryl celý kontejner */
+            object-position: center;
+            /* Střed obrázku bude zachován */
+            transform: translateY(0);
+            will-change: transform;
+            transition: transform 0.2s ease-out;
+        }
 
 
             section {
@@ -444,7 +461,7 @@
             parallaxSections.forEach((parallaxImage) => {
                 const sectionOffset = parallaxImage.parentElement.offsetTop;
                 const speed = 0.8; // Adjust parallax speed
-                const yOffset = (scrollPosition - sectionOffset) * speed + 1;
+                const yOffset = (scrollPosition - sectionOffset) * speed + 200;
                 parallaxImage.style.transform = `translateY(${yOffset}px)`;
             });
         });
