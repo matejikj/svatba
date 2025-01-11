@@ -38,15 +38,55 @@
             height: auto; */
         }
 
-        .parallax {
+        /* .parallax {
             height: 600px;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        } */
+
+        /* .parallax {
+        position: relative;
+        height: 600px;
+        overflow: hidden;
+    }
+
+    .parallax img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: translateY(0);
+        will-change: transform;
+        transition: transform 0.2s ease-out;
+    } */
+
+        .parallax {
+            position: relative;
+            height: 600px;
+            /* Výška sekce */
+            overflow: hidden;
         }
 
-        .hradistek {
+        .parallax img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            /* Obrázek vyplní celou výšku sekce */
+            object-fit: scale-down;
+            /* Obrázek bude oříznut tak, aby pokryl celý kontejner */
+            object-position: center;
+            /* Střed obrázku bude zachován */
+            transform: translateY(0);
+            will-change: transform;
+            transition: transform 0.2s ease-out;
+        }
+
+        /* .hradistek {
             background-image: url('https://www.krasnoupalavou.cz/photos/hradistek-522.jpg');
         }
 
@@ -60,7 +100,7 @@
 
         .ubytko {
             background-image: url('https://www.stavby-vinarny.cz/wp-content/gallery/hotel-a-vinarstvi-madl/EA7A1581.JPG');
-        }
+        } */
 
 
 
@@ -158,10 +198,27 @@
             transform: translateY(-3px);
         }
 
+        .mail-menu {
+            width: 50%;
+            height: auto;
+        }
+
         @media (min-width: 768px) {
             .mobileCard {
                 display: none;
             }
+
+            .mail-menu {
+                width: 25%;
+                height: auto;
+            }
+
+            .parallax {
+                height: 400px;
+                /* Menší výška pro mobilní zařízení */
+            }
+
+
 
             section {
                 padding: 100px;
@@ -259,8 +316,11 @@
         </section>
 
         <!-- Parallax Section -->
-        <div class="parallax hradistek"></div>
-
+        <!-- <div class="parallax hradistek"></div> -->
+        <div class="parallax">
+            <img src="https://www.krasnoupalavou.cz/photos/hradistek-522.jpg" alt="Parallax obrázek">
+        </div>
+    
         <section id="program" class="mb-5">
             <h2 class="section-title">Program</h2>
             <ul class="list-group list-group-flush">
@@ -280,8 +340,11 @@
         </section> -->
 
         <!-- Parallax Section -->
-        <div class="parallax madlik"></div>
-
+        <!-- <div class="parallax madlik"></div> -->
+        <div class="parallax">
+            <img src="https://www.stavby-vinarny.cz/wp-content/gallery/hotel-a-vinarstvi-madl/EA7A3515.JPG" alt="Parallax obrázek">
+        </div>
+    
         <section id="ubytovani" class="mb-5">
             <h2 class="section-title">Ubytování</h2>
             <h3>Pro rodinu</h3>
@@ -309,7 +372,7 @@
             </p>
 
             <h2>Volné kapacity:</h2>
-        </br>
+            </br>
             <p>Pokoj 2 dospělí max 2 děti.</p>
             <p>11/12 volno</p>
             </br>
@@ -325,31 +388,38 @@
 
 
             <p>
-                Pro rezervace na pokoje se nám ozvěte co nejdříve. Budu se zde snažit zobrazovat aktuální stav rezervací
-                na jednotlivé pokoje.
+                Milí hosté,
+
+                abychom všem co nejvíce usnadnili organizaci a zajistili pohodlí, ubytování budeme rezervovat podle
+                pořadí, v jakém se nám ozvete. Doporučujeme tedy co nejdříve potvrdit svou účast a zájem o ubytování,
+                abychom vám mohli vyhovět.
             </p>
-            <p>Pro hosty zdaleka je k dispozici ubytování v blízkém hotelu Zámecký Dvůr. Rezervace na <a
-                    href="mailto:ubytovani@email.com">ubytovani@email.com</a>.</p>
         </section>
 
 
         <!-- Parallax Section -->
-        <div class="parallax ubytko"></div>
+        <!-- <div class="parallax ubytko"></div> -->
+        <div class="parallax">
+            <img src="https://www.stavby-vinarny.cz/wp-content/gallery/hotel-a-vinarstvi-madl/EA7A1432.JPG" alt="Parallax obrázek">
+        </div>
 
         <section id="kontakt" class="mb-5">
             <h2 class="section-title">Kontakt</h2>
-            <p>Pro jakékoliv dotazy nás můžete kontaktovat:</p>
-            <p>Email: <a href="mailto:svatba@email.com">svatba@email.com</a></p>
-            <p>Telefon: +420 123 456 789</p>
+            <p>Pro jakékoliv dotazy se nám určitě ozvěte telefonicky nebo na mail.</p>
+            <img src="./mail.png" alt="Popis obrazku" class="mail-menu">
         </section>
     </main>
 
     <!-- Parallax Section -->
-    <div class="parallax ozvetese"></div>
+    <!-- <div class="parallax ozvetese"></div> -->
+    <div class="parallax">
+        <img src="https://www.stavby-vinarny.cz/wp-content/gallery/hotel-a-vinarstvi-madl/EA7A1581.JPG" alt="Parallax obrázek">
+    </div>
+    
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Naše Svatba. Všechna práva vyhrazena.</p>
+        <p>&copy; 2025 Naše Svatba.</p>
     </footer>
 
     <!-- Bootstrap JS -->
@@ -366,6 +436,19 @@
                 menu.style.alignItems = 'center';
             }
         }
+
+        document.addEventListener('scroll', () => {
+            const parallaxSections = document.querySelectorAll('.parallax img');
+            const scrollPosition = window.pageYOffset;
+
+            parallaxSections.forEach((parallaxImage) => {
+                const sectionOffset = parallaxImage.parentElement.offsetTop;
+                const speed = 0.8; // Adjust parallax speed
+                const yOffset = (scrollPosition - sectionOffset) * speed + 1;
+                parallaxImage.style.transform = `translateY(${yOffset}px)`;
+            });
+        });
+
     </script>
 </body>
 
